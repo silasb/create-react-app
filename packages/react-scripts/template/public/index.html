@@ -27,5 +27,11 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <% for (var cssFile of htmlWebpackPlugin.files.css) { %>
+      <link src="<%= cssFile %>" rel="stylesheet" />
+      <% } %>
+    <% for (var jsFile of htmlWebpackPlugin.files.js) { %>
+      <script type="text/javascript" src="<%= jsFile %>"></script>
+    <% } %>
   </body>
 </html>
